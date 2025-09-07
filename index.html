@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - Contract Farming</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Contract Farming</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+                    <!-- Sign Up Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#join_as famrming" id="signupDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            Sign Up
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="signupDropdown">
+                            <a class="dropdown-item" href="farmer_signup.html">Sign Up as a Farmer</a>
+                            <a class="dropdown-item" href="BUYER_SIGNUP.PHP">Sign Up as a Buyer</a>
+                        </div>
+                    </li>
+
+                    <!-- Login Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Login
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="loginDropdown">
+                            <a class="dropdown-item" href="farmer_login.html">Login as a Farmer</a>
+                            <a class="dropdown-item" href="buyer_login.html">Login as a Buyer</a>
+                        </div>
+                    </li>
+
+                    
+                    <li class="nav-item"><a class="nav-link" href="Dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+                     <!-- Link to the Cart Page -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Marketplace Section -->
+    <main>
+        <section class="marketplace py-5">
+            <div class="container">
+                <h1 class="text-center">Available Crops for Purchase</h1>
+                <div class="row mt-4">
+
+                    <!-- Crop Cards -->
+                    <article class="col-md-3">
+                        <figure class="card">
+                            <img src="Image/wheat.jpeg" class="card-img-top" alt="Wheat">
+                            <figcaption class="card-body">
+                                <h5 class="card-title">Wheat</h5>
+                                <p class="card-text">Price: ₹500 per quintal</p>
+                                <label for="quantity-wheat">Quantity (in quintals):</label>
+                                <input type="number" id="quantity-wheat" value="1" min="1" class="form-control mb-2">
+                                <button class="btn btn-primary btn-block" onclick="addToCart('Wheat', 500, 'quantity-wheat')">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="col-md-3">
+                        <figure class="card">
+                            <img src="Image/Rice.jpeg" class="card-img-top" alt="Rice">
+                            <figcaption class="card-body">
+                                <h5 class="card-title">Rice</h5>
+                                <p class="card-text">Price: ₹800 per quintal</p>
+                                <label for="quantity-rice">Quantity (in quintals):</label>
+                                <input type="number" id="quantity-rice" value="1" min="1" class="form-control mb-2">
+                                <button class="btn btn-primary btn-block" onclick="addToCart('Rice', 800, 'quantity-rice')">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="col-md-3">
+                        <figure class="card">
+                            <img src="Image/corn.jpeg" class="card-img-top" alt="Corn">
+                            <figcaption class="card-body">
+                                <h5 class="card-title">Corn</h5>
+                                <p class="card-text">Price: ₹600 per quintal</p>
+                                <label for="quantity-corn">Quantity (in quintals):</label>
+                                <input type="number" id="quantity-corn" value="1" min="1" class="form-control mb-2">
+                                <button class="btn btn-primary btn-block" onclick="addToCart('Corn', 600, 'quantity-corn')">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="col-md-3">
+                        <figure class="card">
+                            <img src="Image/Barley.jpeg" class="card-img-top" alt="Barley">
+                            <figcaption class="card-body">
+                                <h5 class="card-title">Barley</h5>
+                                <p class="card-text">Price: ₹550 per quintal</p>
+                                <label for="quantity-barley">Quantity (in quintals):</label>
+                                <input type="number" id="quantity-barley" value="1" min="1" class="form-control mb-2">
+                                <button class="btn btn-primary btn-block" onclick="addToCart('Barley', 550, 'quantity-barley')">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="col-md-3">
+                        <figure class="card">
+                            <img src="Image/oats.webp" class="card-img-top" alt="Oats">
+                            <figcaption class="card-body">
+                                <h5 class="card-title">Oats</h5>
+                                <p class="card-text">Price: ₹650 per quintal</p>
+                                <label for="quantity-oats">Quantity (in quintals):</label>
+                                <input type="number" id="quantity-oats" value="1" min="1" class="form-control mb-2">
+                                <button class="btn btn-primary btn-block" onclick="addToCart('Oats', 650, 'quantity-oats')">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="col-md-3">
+                        <figure class="card">
+                            <img src="Image/soyabean.jpeg" class="card-img-top" alt="Soybean">
+                            <figcaption class="card-body">
+                                <h5 class="card-title">Soybean</h5>
+                                <p class="card-text">Price: ₹700 per quintal</p>
+                                <label for="quantity-soybean">Quantity (in quintals):</label>
+                                <input type="number" id="quantity-soybean" value="1" min="1" class="form-control mb-2">
+                                <button class="btn btn-primary btn-block" onclick="addToCart('Soybean', 700, 'quantity-soybean')">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="col-md-3">
+                        <figure class="card">
+                            <img src="Image/millet.jpeg" class="card-img-top" alt="Millet">
+                            <figcaption class="card-body">
+                                <h5 class="card-title">Millet</h5>
+                                <p class="card-text">Price: ₹550 per quintal</p>
+                                <label for="quantity-millet">Quantity (in quintals):</label>
+                                <input type="number" id="quantity-millet" value="1" min="1" class="form-control mb-2">
+                                <button class="btn btn-primary btn-block" onclick="addToCart('Millet', 550, 'quantity-millet')">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="col-md-3">
+                        <figure class="card">
+                            <img src="Image/sorghum.webp" class="card-img-top" alt="Sorghum">
+                            <figcaption class="card-body">
+                                <h5 class="card-title">Sorghum</h5>
+                                <p class="card-text">Price: ₹600 per quintal</p>
+                                <label for="quantity-sorghum">Quantity (in quintals):</label>
+                                <input type="number" id="quantity-sorghum" value="1" min="1" class="form-control mb-2">
+                                <button class="btn btn-primary btn-block" onclick="addToCart('Sorghum', 600, 'quantity-sorghum')">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="col-md-3">
+                        <figure class="card">
+                            <img src="Image/checkpea.avif" class="card-img-top" alt="Chickpea">
+                            <figcaption class="card-body">
+                                <h5 class="card-title">Chickpea</h5>
+                                <p class="card-text">Price: ₹500 per quintal</p>
+                                <label for="quantity-chickpea">Quantity (in quintals):</label>
+                                <input type="number" id="quantity-chickpea" value="1" min="1" class="form-control mb-2">
+                                <button class="btn btn-primary btn-block" onclick="addToCart('Chickpea', 500, 'quantity-chickpea')">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+<!-- 
+                    <article class="col-md-3">
+                        <figure class="card">
+                            <img src="Lentils.jpg" class="card-img-top" alt="Lentils">
+                            <figcaption class="card-body">
+                                <h5 class="card-title">Lentils</h5>
+                                <p class="card-text">Price: ₹650 per quintal</p>
+                                <label for="quantity-lentils">Quantity (in quintals):</label>
+                                <input type="number" id="quantity-lentils" value="1" min="1" class="form-control mb-2">
+                                <button class="btn btn-primary btn-block" onclick="addToCart('Lentils', 650, 'quantity-lentils')">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article> -->
+
+                    <article class="col-md-3">
+                        <figure class="card">
+                            <img src="Image/pea.jpeg" class="card-img-top" alt="Peas">
+                            <figcaption class="card-body">
+                                <h5 class="card-title">Peas</h5>
+                                <p class="card-text">Price: ₹700 per quintal</p>
+                                <label for="quantity-peas">Quantity (in quintals):</label>
+                                <input type="number" id="quantity-peas" value="1" min="1" class="form-control mb-2">
+                                <button class="btn btn-primary btn-block" onclick="addToCart('Peas', 700, 'quantity-peas')">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="col-md-3">
+                        <figure class="card">
+                            <img src="Image/groundnut.jpg" class="card-img-top" alt="Groundnut">
+                            <figcaption class="card-body">
+                                <h5 class="card-title">Groundnut</h5>
+                                <p class="card-text">Price: ₹850 per quintal</p>
+                                <label for="quantity-groundnut">Quantity (in quintals):</label>
+                                <input type="number" id="quantity-groundnut" value="1" min="1" class="form-control mb-2">
+                                <button class="btn btn-primary btn-block" onclick="addToCart('Groundnut', 850, 'quantity-groundnut')">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="col-md-3">
+                        <figure class="card">
+                            <img src="Image/banana.jpg" class="card-img-top" alt="banana">
+                            <figcaption class="card-body">
+                                <h5 class="card-title">banana</h5>
+                                <p class="card-text">Price: ₹900 per quintal</p>
+                                <label for="quantity-sunflower">Quantity (in quintals):</label>
+                                <input type="number" id="quantity-sunflower" value="1" min="1" class="form-control mb-2">
+                                <button class="btn btn-primary btn-block" onclick="addToCart('Sunflower', 900, 'quantity-sunflower')">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+<!-- 
+                    <article class="col-md-3">
+                        <figure class="card">
+                            <img src="Flaxseed.jpg" class="card-img-top" alt="Flaxseed">
+                            <figcaption class="card-body">
+                                <h5 class="card-title">Flaxseed</h5>
+                                <p class="card-text">Price: ₹750 per quintal</p>
+                                <label for="quantity-flaxseed">Quantity (in quintals):</label>
+                                <input type="number" id="quantity-flaxseed" value="1" min="1" class="form-control mb-2">
+                                <button class="btn btn-primary btn-block" onclick="addToCart('Flaxseed', 750, 'quantity-flaxseed')">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="col-md-3">
+                        <figure class="card">
+                            <img src="Quinoa.jpg" class="card-img-top" alt="Quinoa">
+                            <figcaption class="card-body">
+                                <h5 class="card-title">Quinoa</h5>
+                                <p class="card-text">Price: ₹1200 per quintal</p>
+                                <label for="quantity-quinoa">Quantity (in quintals):</label>
+                                <input type="number" id="quantity-quinoa" value="1" min="1" class="form-control mb-2">
+                                <button class="btn btn-primary btn-block" onclick="addToCart('Quinoa', 1200, 'quantity-quinoa')">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article> -->
+
+                </div>
+            </div>
+        </section>
+    </main>
+<!-- Footer -->
+<footer class="bg-dark text-light py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h5>Get to Know Us</h5>
+                <ul class="list-unstyled">
+                    <li><a href="about_us.html" target="_blank" class="text-light">About Us</a></li>
+                    <li><a href="Careers.html" class="text-light">Careers</a></li>
+                    <li><a href="#" class="text-light">Press Releases</a></li>
+                    <li><a href="team.html" class="text-light">Our Team</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Connect with Us</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-light">Facebook</a></li>
+                    <li><a href="#" class="text-light">Twitter</a></li>
+                    <li><a href="#" class="text-light">Instagram</a></li>
+                    <li><a href="#" class="text-light">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Make Money with Us</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-light" id="Join_farming">Sell on Marketplace</a></li>
+                    <li><a href="#" class="text-light">Become an Affiliate</a></li>
+                    <li><a href="#" class="text-light">Advertise Your Products</a></li>
+                    <li><a href="#" class="text-light">Amazon Pay</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Let Us Help You</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-light">Your Account</a></li>
+                    <li><a href="#" class="text-light">Returns Centre</a></li>
+                    <li><a href="#" class="text-light">100% Purchase Protection</a></li>
+                    <li><a href="#" class="text-light">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <p>&copy; 2025 Contract Farming Marketplace | All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+       let cart = []; // Array to hold cart items
+
+function addToCart(cropName, price, quantityId) {
+    const quantity = parseInt(document.getElementById(quantityId).value);
+
+    // Check if quantity is valid
+    if (quantity <= 0) {
+        alert("Please enter a valid quantity.");
+        return;
+    }
+
+    // Update the cart
+    cart.push({ name: cropName, price: price, quantity: quantity });
+
+    // Save cart to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert(`${quantity} quintal(s) of ${cropName} added to cart at ₹${price * quantity}.`);
+}
+
+    </script>
+</body>
+</html>

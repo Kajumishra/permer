@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="css/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Profile Section -->
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="sourabh.jpg" alt="Profile Picture" class="profile-img">
+            <h1 class="user-name">Piyush Mishra</h1>
+            <p class="user-role">Contract Farming Marketplace - Buyer</p>
+        </div>
+
+        <div class="profile-details">
+            <h2>Profile Details</h2>
+            <form id="profile-form">
+                <div class="info">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" value="Piyush Mishra" disabled>
+                </div>
+                <div class="info">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" value="piyushmishra21052003@gmail.com" disabled>
+                </div>
+                <div class="info">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" value="Indore, MP" disabled>
+                </div>
+                <div class="info">
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" value="+91-1234567890" disabled>
+                </div>
+            </form>
+        </div>
+
+        <div class="profile-actions">
+            <button id="edit-btn" class="edit-btn">Edit Profile</button>
+            <a href="index.html"><button class="logout-btn">Logout</button></a>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="profile.js"></script>
+
+</body>
+</html>
